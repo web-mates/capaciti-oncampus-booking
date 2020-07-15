@@ -1,0 +1,530 @@
+
+{% load static %}
+<style>
+
+	.hellow-msg {
+				color:rgba(1, 2, 12, 0.281) !important;
+				padding-top: 10;
+    
+				
+	}
+
+
+
+</style>
+<style>
+	/* Main */
+#menu {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0 0 0;
+    list-style: none;
+	box-shadow: 0 2px 1px #9c9c9c;
+	margin-right: 1220;
+	color: white;
+	padding-top: 15;
+	padding-bottom: 15;
+	background-color:rgb(32, 33, 68);
+}
+
+#menu li {
+    float: left;
+    padding: 0 0 10px 0;
+    position: relative;
+}
+
+#menu a {
+    float: left;
+    height: 25px;
+    padding: 0 25px;
+    color:white;
+    text-transform: uppercase;
+    font: bold 12px/25px Arial, Helvetica;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #000;
+}
+
+#menu li:hover > a {
+    color: #fafafa;
+}
+
+*html #menu li a:hover { /* IE6 */
+    color: white
+}
+
+#menu li:hover > ul {
+    display: block;
+}
+
+.home{
+	background-color:#f4f4f4;
+	font-size: 15;
+	padding-left: 30;
+	padding-right: 30;
+	padding-top: 25;
+	padding-bottom: 38;
+	color: rgb(32, 32, 87);
+}
+
+.logout{
+    color:#7268A6;
+    font-size: 10;
+    float: right;
+    padding-top: 7;
+    padding-bottom: 7;
+    width: 200;
+    background-color: brown;
+    padding-left: 40;
+    margin-right: 10;
+}
+
+
+.logout2{
+        color:white;
+        font-size: 20;
+        float: right;
+        padding-top: 7;
+        padding-bottom: 7;
+        width: 200;
+        margin-right: 40;
+
+}
+
+.logout3{
+        color:white;
+        font-size: 10;
+        float: right;
+        padding-top: 7;
+        padding-bottom: 7;
+        width: 220;
+        background-color: rgb(32, 32, 87);
+        margin-right: 8;
+        padding-left: 17;
+        
+}
+
+/* Sub-menu */
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: 99999;
+    background-color: #444;
+    background-image: linear-gradient(#444, #111);
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#menu ul li {
+    float: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    box-shadow: 0 1px 0 #111111,
+                0 2px 0 #777777;
+}
+
+#menu ul li:last-child {
+    box-shadow: none;
+}
+
+#menu ul a {
+    padding: 10px;
+    height: auto;
+    line-height: 1;
+    display: block;
+    white-space: nowrap;
+    float: none;
+    text-transform: none;
+}
+
+*html #menu ul a { /* IE6 */
+    height: 10px;
+    width: 150px;
+}
+
+*:first-child+html #menu ul a { /* IE7 */
+    height: 10px;
+    width: 150px;
+}
+
+#menu ul a:hover {
+    background-color: #0186ba;
+    background-image: linear-gradient(#04acec, #0186ba);
+}
+
+#menu ul li:first-child a {
+    border-radius: 5px 5px 0 0;
+}
+
+#menu ul li:first-child a:after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #444;
+}
+
+#menu ul li:first-child a:hover:after {
+    border-bottom-color: #04acec;
+}
+
+#menu ul li:last-child a {
+    border-radius: 0 0 5px 5px;
+}
+
+/* Clear floated elements */
+#menu:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+* html #menu             { zoom: 1; } /* IE6 */
+*:first-child+html #menu { zoom: 1; } /* IE7 */
+
+#menu ul li:first-child a:after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #444;
+}
+
+#menu ul li:first-child a:hover:after {
+    border-bottom-color: #04acec;
+}
+
+.c{
+    background-color:rgb(9, 9, 32);
+    color: white;
+}
+
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-size: cover;
+  background-color: #f4f4f4;
+}
+.login-box{
+  max-width: 350px;
+  border-radius: 20px;
+  margin:auto;
+  background: #B6CEC7;
+  box-sizing: border-box;
+  padding: 40px;
+  color: #fff;
+  margin-top: 100px;
+}
+.login-box h1{
+
+  font-size: 40px;
+  border-bottom: 6px solid grey;
+  margin-bottom: 50px;
+  padding: 13px 0
+}
+
+.textbox i{
+  width: 26px;
+  float: left;
+  text-align: center;
+}
+
+.heading-container {
+  margin: auto;
+  max-width: 500px;
+  padding: 10px;
+}
+
+.heading {
+  font-weight: bold;
+}
+
+h1 {
+  font-weight: normal;
+  color: #39366C;
+}
+
+.logo-container {
+  margin: auto;
+  max-width: 500px;
+  padding: 10px;
+}
+
+.continue-button {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  margin-top: 30px;
+  outline: none;
+  border: none;
+  background: #1a2046;
+  opacity: 0.7;
+  border-radius: 20px;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.continue-button a {
+  text-decoration: none;
+}
+
+.subheading {
+  color: #B58CBB;
+}
+
+.btn{
+  width: 100%;
+  background: #141236;
+  border: 2px solid grey;
+  color: white;
+  padding: 5px;
+}
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #1d2951;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+  width:30%;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+.wrap1{
+  max-width: 650px;
+  border-radius: 20px;
+  margin:auto;
+  background:white;
+  box-sizing: border-box;
+  padding: 40px;
+  color: #1d2951;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #1d2951;
+}
+.booking-form{
+  max-width: 450px;
+  border-radius: 20px;
+  margin:auto;
+  background: #B6CEC7;
+  box-sizing: border-box;
+  padding: 40px;
+  color: #1d2951;
+  margin-top: 100px;
+}
+h2{
+   text-align: center;
+   color: #1d2951;
+} input[type=text],input[type=password]{
+  width:100%;
+  box-sizing: border-box;
+  padding: 12px 5px;
+  outline: none;
+  border: solid #1d2951 1px;
+  color: #1d2951;
+  border-radius: 5px;
+  margin: 5px;
+  font-weight: bold;
+}
+input[type=submit]{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  margin-top: 30px;
+  outline: none;
+  border: none;
+  background: #0e0c29;
+  opacity: 0.7;
+  border-radius:20px;
+  font-size: 20px;
+  color: white;
+}
+.containerR {
+    width:100%;
+    margin:0 auto;
+  }
+  header {
+  background:white;
+
+  }
+  header::after{
+      content:'';
+      display:table;
+      clear:both;
+    }
+nav{
+    float:right;
+
+}
+nav ul{
+      margin:0;
+      padding:0;
+      list-style:none;
+
+}
+nav li{
+     display: inline-block;
+     margin-left:70px;
+     padding-top:25px;
+     position: relative;
+
+
+}
+nav a{
+    color:#B6CEC7;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size: 14px;
+
+}
+nav a:hover{
+    color:#B6CEC7;
+}
+nav a::before{
+    content: "";
+    display:block;
+    height:5px;
+    width: 100%;
+    background-color:#7268A6;
+    position: absolute;
+    top:0;
+    width:0%;
+    transition:all ease-in-out 250ms;
+}
+nav a:hover::before{
+    width:100%;
+}
+
+/*layout*/
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    height:90vh;
+    width:100%;
+  }
+
+  /* Created two equal columns that sits next to each other */
+  .column {
+    flex:20%;
+    padding:5px;
+    height: 520px;
+   background-color: none;
+   color: white;
+  }
+
+
+
+</style>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+      if ($.browser.msie && $.browser.version.substr(0,1)<7)
+      {
+        $('li').has('ul').mouseover(function(){
+            $(this).children('ul').show();
+            }).mouseout(function(){
+            $(this).children('ul').hide();
+            })
+      }
+    });
+</script>
+
+
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<title>COVID-19 Risk Assesment</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+</head>
+
+{% csrf_token %}
+<form method="POST" action ="">
+    <nav>
+        <ul id="menu">
+            
+            <button  class="logout"> <a href="{% url 'logout_user' %}"> Sign Out</a></button>
+            <div class="logout2"><span  i class="fas fa-user"></span><snap class="hm"></snap> Hi, {{request.user}}</snap></div>
+        </ul>
+        
+
+    </nav>
+</form>
+
+<body>
+    <br><br>
+    <br><br>
+	<div class="wrap1">
+    <h1><span class="heading d-flex justify-content-center cap">Please Complete The form!</span></h1>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <img src="{% static 'images/page2.png' %}" width="214" height="102">
+            <h1><span class="heading">Covid-19</span> Risk assessment</h1>
+            <h3 class ="subheading"><strong> Symptoms</strong></h3>
+            <h4 class ="subheading">Have you experienced any of the below in the past 21 days?</h4>
+            <p>Cough:{{form.caugh}}  Shortness of breath:{{form.shortness_of_breath}}
+            Fever:{{form.fever}} General body pain: {{form.body_pain}} </p>
+            <p>Sore throat:{{form.sore_throat}}  Loss of taste:{{form.loss_of_taste}}
+            <p>Loss of smell: {{form.loss_of_smell}} 
+            <input type="submit" value="Next">
+
+        
+        
+        </form>
+    </div>
+    
+    
+  
+   
+</body>
+</html>

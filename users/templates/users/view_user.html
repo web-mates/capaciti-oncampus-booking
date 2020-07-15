@@ -1,0 +1,318 @@
+
+{% load static %}
+{% load crispy_forms_tags %}
+<style>
+	/* Main */
+#menu {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0 0 0;
+    list-style: none;
+	box-shadow: 0 2px 1px #9c9c9c;
+	margin-right: 950;
+	color: white;
+	padding-top: 15;
+	padding-bottom: 15;
+	background-color:rgb(32, 33, 68);
+}
+
+#menu li {
+    float: left;
+    padding: 0 0 10px 0;
+    position: relative;
+}
+
+#menu a {
+    float: left;
+    height: 25px;
+    padding: 0 25px;
+    color:white;
+    text-transform: uppercase;
+    font: bold 12px/25px Arial, Helvetica;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #000;
+}
+
+#menu li:hover > a {
+    color: #fafafa;
+}
+
+*html #menu li a:hover { /* IE6 */
+    color: white
+}
+
+#menu li:hover > ul {
+    display: block;
+}
+
+.home{
+	background-color:#f4f4f4;
+	font-size: 15;
+	padding-left: 30;
+	padding-right: 30;
+	padding-top: 25;
+	padding-bottom: 38;
+	color: rgb(32, 32, 87);
+}
+
+.logout{
+				color:#7268A6;
+				font-size: 10;
+				float: right;
+				padding-top: 7;
+				padding-bottom: 7;
+				width: 200;
+				background-color: brown;
+				padding-left: 40;
+				margin-right: 10;
+}
+
+	
+.logout2{
+			color:white;
+			font-size: 20;
+			float: right;
+			padding-top: 7;
+			padding-bottom: 7;
+			width: 200;
+			margin-right: 20;
+	
+}
+
+.logout3{
+			color:white;
+			font-size: 10;
+			float: right;
+			padding-top: 7;
+			padding-bottom: 7;
+			width: 220;
+			background-color: rgb(32, 32, 87);
+			margin-right: 8;
+			padding-left: 17;
+			
+}
+
+/* Sub-menu */
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: 99999;
+    background-color: #444;
+    background-image: linear-gradient(#444, #111);
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#menu ul li {
+    float: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    box-shadow: 0 1px 0 #111111,
+                0 2px 0 #777777;
+}
+
+#menu ul li:last-child {
+    box-shadow: none;
+}
+
+#menu ul a {
+    padding: 10px;
+    height: auto;
+    line-height: 1;
+    display: block;
+    white-space: nowrap;
+    float: none;
+    text-transform: none;
+}
+
+*html #menu ul a { /* IE6 */
+    height: 10px;
+    width: 150px;
+}
+
+*:first-child+html #menu ul a { /* IE7 */
+    height: 10px;
+    width: 150px;
+}
+
+#menu ul a:hover {
+    background-color: #0186ba;
+    background-image: linear-gradient(#04acec, #0186ba);
+}
+
+#menu ul li:first-child a {
+    border-radius: 5px 5px 0 0;
+}
+
+#menu ul li:first-child a:after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #444;
+}
+
+#menu ul li:first-child a:hover:after {
+    border-bottom-color: #04acec;
+}
+
+#menu ul li:last-child a {
+    border-radius: 0 0 5px 5px;
+}
+
+/* Clear floated elements */
+#menu:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+* html #menu             { zoom: 1; } /* IE6 */
+*:first-child+html #menu { zoom: 1; } /* IE7 */
+
+#menu ul li:first-child a:after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #444;
+}
+
+#menu ul li:first-child a:hover:after {
+    border-bottom-color: #04acec;
+}
+.search{
+	background-color: grey;
+}
+
+
+.back {
+        font-size: 60px;
+        margin-left: 70px;
+        color: black;
+        
+    }
+
+</style>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+      if ($.browser.msie && $.browser.version.substr(0,1)<7)
+      {
+        $('li').has('ul').mouseover(function(){
+            $(this).children('ul').show();
+            }).mouseout(function(){
+            $(this).children('ul').hide();
+            })
+      }
+    });
+</script>
+
+
+
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	
+	<title>Candidate Space Booking</title>
+	{% csrf_token %}
+	<form method="POST" action ="">
+		<nav>
+			<ul id="menu">
+				<li><a href="#"> ALL Booking Records Of The User</a></li>
+                <li>
+                    <a href="#"><span  i class="fas fa-globe"></span><snap class="hm"> All</snap></a>
+                    <ul>
+                        <li><a href="{% url 'admin_page' %}"> Home</a></li>
+                        <li><a href="{% url 'users' %}"> Users</a></li>
+                        <li><a href="{% url 'admin_pending' %}"> Pending Bookings</a></li>
+                        <li><a href="{% url 'admin_approved' %}"> Approved Bookings</a></li>
+                        <li><a href="{% url 'admin_rejection' %}"> Rejected Bookings</a></li>
+                        <li><a href="{% url 'auto_rejected' %}"> Auto-Rejected Bookings</a></li>
+                        <li><a href="{% url 'admin_disapproved' %}"> Disapproved Bookings</a></li>
+                    </ul>
+                </li>
+				
+				<button  class="logout"> <a href="{% url 'logout_user' %}"> Sign Out</a></button>
+            	<div class="logout2"><span  i class="fas fa-user"></span><snap class="hm"></snap> Hi, {{request.user}}</snap></div>
+			</ul>
+			
+
+		</nav>
+	</form>
+	
+	
+
+</head>
+
+
+		
+</nav>
+
+<div class="back">
+    <div>
+        
+    </div>
+    <a href="{% url 'users' %}"><i class="fas fa-arrow-alt-circle-left"></i></a>
+
+</div> 
+<body>
+
+
+    <br></br>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.booked_date}}
+        <input  type="submit" value="Search By Booked Date"> 
+        <br></br>
+  
+	  </form>
+		<button onclick="exportTableToExcel('DateBooked', 'Candidate Booked')">Export Table Data To Excel File</button> 
+		<table id ="DateBooked" class="table table-striped table-bordered table-sm">  
+            <thead class="thead-dark">  
+            <tr> 
+				<th></th>
+                <th>User </th>  
+                <th>Day Booked</th>
+                <th>Status</th>
+				
+                 
+            </tr>  
+            </thead>  
+            <tbody>  
+        {% for book in book %}  
+        <tr>  
+			<td>{{ forloop.counter}}   </td>  
+			<td>{{ book.user }}</td> 
+            <td>{{ book.booked_date}}</td> 
+            <td>{{ book.status}}</td> 
+            
+        </tr>  
+        {% endfor %}  
+        </tbody>  
+		</table>  
+</body>
+
+</html>
